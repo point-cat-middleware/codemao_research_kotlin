@@ -1,0 +1,3 @@
+rootProject.name = 'codemao_research_kotlin'
+include 'research'
+

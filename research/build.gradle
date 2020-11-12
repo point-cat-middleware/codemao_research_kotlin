@@ -1,0 +1,28 @@
+apply plugin: "org.springframework.boot"
+
+dependencies {
+    compile "cn.codemao.starter:spring-cloud-starter-common"
+
+    compile "org.springframework.boot:spring-boot-starter-actuator"
+    compile "com.fasterxml.jackson.module:jackson-modules-java8"
+    compile "com.fasterxml.jackson.module:jackson-module-parameter-names"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-jdk8"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310"
+    compile "com.fasterxml.jackson.module:jackson-module-kotlin"
+    compile "com.fasterxml.jackson.module:jackson-module-afterburner"
+    compile "io.github.microutils:kotlin-logging"
+    compile "ch.qos.logback:logback-core"
+    compile "ch.qos.logback:logback-classic"
+
+    // QLExpress
+    compile "com.alibaba:QLExpress:3.2.4"
+
+    // aviator
+    compile "com.googlecode.aviator:aviator:5.0.1"
+
+    compile "org.openjdk.jmh:jmh-core:1.23"
+    compile "org.openjdk.jmh:jmh-generator-annprocess:1.23"
+
+    testCompile "junit:junit:4.12"
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+}
