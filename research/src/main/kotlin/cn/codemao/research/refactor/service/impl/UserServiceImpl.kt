@@ -16,4 +16,10 @@ class UserServiceImpl(
         private val userRepository: UserRepository
 ) : UserService {
     override fun getByUserId(userId: Int): User = userRepository.getByUserId(userId)
+
+    override fun getByAgeRange(ageMin: Int, ageMax: Int): List<User> =
+            userRepository.listUsers().filter { it.age in ageMin..ageMax }
+
+    override fun getUserIdsByAgeRange(ageMin: Int, ageMax: Int): List<Int> =
+            getByAgeRange(ageMin, ageMax).map { it.id }
 }

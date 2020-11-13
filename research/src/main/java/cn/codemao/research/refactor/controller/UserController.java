@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * @author switch
  * @since 2020/11/12
@@ -26,5 +28,15 @@ public class UserController {
     @GetMapping("/{userId}")
     public User getByUserId(@PathVariable("userId") Integer userId) {
         return userService.getByUserId(userId);
+    }
+
+    @GetMapping("/age/{min}/{max}")
+    public List<User> getByAge(@PathVariable("min") Integer min, @PathVariable("max") Integer max) {
+        return userService.getByAgeRange(min, max);
+    }
+
+    @GetMapping("/age/user_id/{min}/{max}")
+    public List<Integer> getUserIdByAge(@PathVariable("min") Integer min, @PathVariable("max") Integer max) {
+        return userService.getUserIdsByAgeRange(min, max);
     }
 }

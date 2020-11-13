@@ -1,8 +1,11 @@
 package cn.codemao.research.refactor.common.util;
 
+import cn.codemao.common.time.ZonedDateTimes;
+
 import javax.validation.constraints.NotNull;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author switch
@@ -21,5 +24,9 @@ public final class ZonedDateTimeUtil {
 
     public static ZonedDateTime now(@NotNull ZoneId zoneId) {
         return ZonedDateTime.now(zoneId);
+    }
+
+    public static ZonedDateTime nowKotlin() {
+        return ZonedDateTimes.INSTANCE.ofEpoch(now().toEpochSecond(), TimeUnit.SECONDS);
     }
 }

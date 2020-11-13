@@ -11,4 +11,8 @@ import cn.codemao.research.refactor.domain.entity.User
 
 interface UserService {
     fun getByUserId(userId: Int): User
+
+    fun getByAgeRange(ageMin: Int, ageMax: Int): List<User>
+
+    fun getUserIdsByAgeRange(ageMin: Int, ageMax: Int): List<Int>
 }

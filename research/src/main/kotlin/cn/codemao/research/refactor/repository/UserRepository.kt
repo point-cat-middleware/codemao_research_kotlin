@@ -10,4 +10,6 @@ import cn.codemao.research.refactor.domain.entity.User
  */
 interface UserRepository {
     fun getByUserId(userId: Int): User
+
+    fun listUsers(): List<User>
 }
